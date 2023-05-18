@@ -54,5 +54,6 @@ use {
     end,
 }
 use 'mattn/emmet-vim'
-use 'nvim-telescope/telescope-symbols.nvim'
+use 'mattn/emmet-vim'
+use 'dcampos/cmp-emmet-vim'
 end)

@@ -25,3 +25,5 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
+
+vim.g.user_emmet_leader_key = '<C-;>'

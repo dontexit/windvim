@@ -90,6 +90,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\Edwin\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\catppuccin",
     url = "https://github.com/catppuccin/nvim"
   },
+  ["cmp-emmet-vim"] = {
+    loaded = true,
+    path = "C:\\Users\\Edwin\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-emmet-vim",
+    url = "https://github.com/dcampos/cmp-emmet-vim"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "C:\\Users\\Edwin\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-nvim-lsp",
@@ -155,11 +160,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Edwin\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
-  },
-  ["telescope-symbols.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\Edwin\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope-symbols.nvim",
-    url = "https://github.com/nvim-telescope/telescope-symbols.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
