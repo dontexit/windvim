@@ -1,0 +1,2 @@
+require("winde")
+print("hello")
