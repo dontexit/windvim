@@ -18,17 +18,12 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 vim.keymap.set("n", "<leader>Q", "<C-\\><C-n>")
-vim.keymap.set("n","<leader>d",":bd<CR>")
-vim.keymap.set("n","<leader>h",'<C-W>h')
-vim.keymap.set("n","<leader>l",'<C-W>l')
-vim.keymap.set("n","<leader>j",'<C-W>j')
-vim.keymap.set("n","<leader>j",'<C-W>j')
+vim.keymap.set("n","<leader>bd",":bd<CR>")
+vim.keymap.set("n","<leader>bn",':bprevious<CR>')
+vim.keymap.set("n","<leader>bp",':bnext<CR>')
 vim.keymap.set("n","<leader>sv",'<C-W>v')
 vim.keymap.set("n","<leader>sh",'<C-W>s')
 
-
-vim.keymap.set("n","<leader>z",':bprevious<CR>')
-vim.keymap.set("n","<leader>c",':bnext<CR>')
 
 
 

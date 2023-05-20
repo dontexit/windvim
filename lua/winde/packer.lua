@@ -54,6 +54,6 @@ use {
     end,
 }
 use 'mattn/emmet-vim'
-use 'mattn/emmet-vim'
 use 'dcampos/cmp-emmet-vim'
+use 'HiPhish/nvim-ts-rainbow2'
 end)
