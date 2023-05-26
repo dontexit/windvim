@@ -1,4 +1,13 @@
 vim.g.mapleader= " "
+
+
+
+local opts = { noremap = true, silent = true }
+
+vim.keymap.set("n", "<C-'>", "<cmd>PickColor<cr>", opts)
+vim.keymap.set("i", "<C-'>", "<cmd>PickColorInsert<cr>", opts)
+
+
 vim.keymap.set("n","<leader>e",vim.cmd.Ex)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")

@@ -100,6 +100,12 @@ _G.packer_plugins = {
     path = "C:\\Users\\Edwin\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["color-picker.nvim"] = {
+    config = { "\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17color-picker\frequire\0" },
+    loaded = true,
+    path = "C:\\Users\\Edwin\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\color-picker.nvim",
+    url = "https://github.com/ziontee113/color-picker.nvim"
+  },
   ["emmet-vim"] = {
     loaded = true,
     path = "C:\\Users\\Edwin\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\emmet-vim",
@@ -197,6 +203,10 @@ time([[Config for nvim-terminal]], false)
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
+-- Config for: color-picker.nvim
+time([[Config for color-picker.nvim]], true)
+try_loadstring("\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17color-picker\frequire\0", "config", "color-picker.nvim")
+time([[Config for color-picker.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

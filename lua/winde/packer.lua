@@ -53,6 +53,11 @@ use {
         require('nvim-terminal').setup()
     end,
 }
+use ({"ziontee113/color-picker.nvim",
+    config = function()
+        require("color-picker")
+    end,
+})
 use 'mattn/emmet-vim'
 use 'dcampos/cmp-emmet-vim'
 use 'HiPhish/nvim-ts-rainbow2'
