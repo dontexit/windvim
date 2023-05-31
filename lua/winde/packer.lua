@@ -61,4 +61,5 @@ use ({"ziontee113/color-picker.nvim",
 use 'mattn/emmet-vim'
 use 'dcampos/cmp-emmet-vim'
 use 'HiPhish/nvim-ts-rainbow2'
+use 'ray-x/aurora' 
 end)
