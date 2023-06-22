@@ -62,4 +62,38 @@ use 'mattn/emmet-vim'
 use 'dcampos/cmp-emmet-vim'
 use 'HiPhish/nvim-ts-rainbow2'
 use 'ray-x/aurora' 
+use 'nvim-tree/nvim-web-devicons'
+use {'nvim-tree/nvim-tree.lua',
+    config=function()
+        require('nvim-tree').setup(
+            {
+                sort_by = "case_sensitive",
+                view = {
+                    width = 30,
+                },
+                renderer = {
+                    group_empty = true,
+                },
+                filters = {
+                    dotfiles = true,
+                },
+            }
+            )
+        end,
+     
+}
+
+use {'brenoprata10/nvim-highlight-colors',
+    config=function()
+        require('nvim-highlight-colors').setup()
+    end,
+}
+use {
+  'barrett-ruth/live-server.nvim',
+  run = 'yarn global add live-server',
+  config = function()
+    require('live-server').setup(opts)   
+  end
+}
+
 end)
