@@ -215,6 +215,14 @@ _G.packer_plugins = {
     path = "C:\\Users\\Edwin\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\undotree",
     url = "https://github.com/mbbill/undotree"
   },
+  ["venv-selector.nvim"] = {
+    config = { "\27LJ\2\nÌ\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\t\tname\tvenv\28notify_user_on_activate\2\19fd_binary_name\afd\16dap_enabled\1\21search_workspace\2\vsearch\2\17auto_refresh\1\25search_venv_managers\2\fparents\3\2\nsetup\18venv-selector\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "C:\\Users\\Edwin\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\venv-selector.nvim",
+    url = "https://github.com/linux-cultist/venv-selector.nvim"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "C:\\Users\\Edwin\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-fugitive",
@@ -223,14 +231,22 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-highlight-colors
-time([[Config for nvim-highlight-colors]], true)
-try_loadstring("\27LJ\2\nC\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\26nvim-highlight-colors\frequire\0", "config", "nvim-highlight-colors")
-time([[Config for nvim-highlight-colors]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+try_loadstring("\27LJ\2\n«\1\0\0\4\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\ffilters\1\0\1\rdotfiles\2\rrenderer\1\0\1\16group_empty\2\tview\1\0\1\nwidth\3\30\1\0\1\fsort_by\19case_sensitive\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
+time([[Config for nvim-tree.lua]], false)
 -- Config for: color-picker.nvim
 time([[Config for color-picker.nvim]], true)
 try_loadstring("\27LJ\2\n,\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\17color-picker\frequire\0", "config", "color-picker.nvim")
 time([[Config for color-picker.nvim]], false)
+-- Config for: nvim-terminal
+time([[Config for nvim-terminal]], true)
+try_loadstring("\27LJ\2\nX\0\0\3\0\6\0\n6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\3\0'\2\4\0B\0\2\0029\0\5\0B\0\1\1K\0\1\0\nsetup\18nvim-terminal\frequire\vhidden\6o\bvim\0", "config", "nvim-terminal")
+time([[Config for nvim-terminal]], false)
+-- Config for: nvim-highlight-colors
+time([[Config for nvim-highlight-colors]], true)
+try_loadstring("\27LJ\2\nC\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\26nvim-highlight-colors\frequire\0", "config", "nvim-highlight-colors")
+time([[Config for nvim-highlight-colors]], false)
 -- Config for: live-server.nvim
 time([[Config for live-server.nvim]], true)
 try_loadstring("\27LJ\2\nB\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\3\0B\0\2\1K\0\1\0\topts\nsetup\16live-server\frequire\0", "config", "live-server.nvim")
@@ -239,14 +255,13 @@ time([[Config for live-server.nvim]], false)
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-try_loadstring("\27LJ\2\n«\1\0\0\4\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\ffilters\1\0\1\rdotfiles\2\rrenderer\1\0\1\16group_empty\2\tview\1\0\1\nwidth\3\30\1\0\1\fsort_by\19case_sensitive\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
-time([[Config for nvim-tree.lua]], false)
--- Config for: nvim-terminal
-time([[Config for nvim-terminal]], true)
-try_loadstring("\27LJ\2\nX\0\0\3\0\6\0\n6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\3\0'\2\4\0B\0\2\0029\0\5\0B\0\1\1K\0\1\0\nsetup\18nvim-terminal\frequire\vhidden\6o\bvim\0", "config", "nvim-terminal")
-time([[Config for nvim-terminal]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'venv-selector.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

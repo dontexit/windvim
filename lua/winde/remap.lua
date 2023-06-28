@@ -6,9 +6,15 @@ local opts = { noremap = true, silent = true }
 
 vim.keymap.set("n", "Cp","<cmd>PickColor<cr>", opts)
 vim.keymap.set("n", "Ci", "<cmd>PickColorInsert<cr>", opts)
-
-
 vim.keymap.set("n","<leader>e",vim.cmd.Ex)
+
+
+vim.keymap.set("n","<leader>vs", "<cmd>:VenvSelect<cr>")
+
+vim.keymap.set("n","<leader>vc", "<cmd>:VenvSelectCached<cr>")
+		
+		
+
 
 
 vim.keymap.set("n","fe",":NvimTreeToggle<cr>")
