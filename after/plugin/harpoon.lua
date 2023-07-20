@@ -1,11 +1,24 @@
-local mark = require("harpoon.mark")
-local ui = require("harpoon.ui")
-
-vim.keymap.set("n","<leader>a", mark.add_file)
-vim.keymap.set("n","<C-e>", ui.toggle_quick_menu)
-
-vim.keymap.set("n", "<C-h>",function() ui.nav_file(1) end)
-vim.keymap.set("n", "<C-t>",function() ui.nav_file(2) end)
-vim.keymap.set("n", "<C-n>",function() ui.nav_file(3) end)
-vim.keymap.set("n", "<C-s>",function() ui.nav_file(4) end)
-
+-- local mark = require("harpoon.mark")
+-- local ui = require("harpoon.ui")
+-- local term = require("harpoon.term")
+-- vim.keymap.set("n","<leader>a", mark.add_file)
+-- vim.keymap.set("n","<C-e>", ui.toggle_quick_menu)
+--
+-- vim.keymap.set("n", "f1>",function() ui.nav_file(1) end)
+-- vim.keymap.set("n", "f2>",function() ui.nav_file(2) end)
+-- vim.keymap.set("n", "f3",function() ui.nav_file(3) end)
+-- vim.keymap.set("n", "f4",function() ui.nav_file(4) end)
+--
+-- vim.keymap.set("n", "fn",function() ui.nav_next() end)
+-- vim.keymap.set("n", "fp",function() ui.nav_prev() end)
+--
+--
+-- vim.keymap.set("n","tt", term.toggle_quick_menu)
+-- vim.keymap.set("n", "t1",function() term.gotoTerminal(1)  end)
+-- vim.keymap.set("n", "t2",function() term.gotoTerminal(2)  end)
+-- vim.keymap.set("n", "t3",function() term.gotoTerminal(3)  end)
+-- vim.keymap.set("n", "t4",function() term.gotoTerminal(4)  end)
+--
+-- vim.keymap.set("n", "tn",function() term.nav_next() end)
+-- vim.keymap.set("n", "tp",function() term.nav_prev() end)
+--  

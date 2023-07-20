@@ -26,7 +26,6 @@ vim.opt.updatetime = 50
 
 vim.g.user_emmet_leader_key = '<C-;>'
 
-vim.o.termguicolors = true
 vim.o.t_Co = 256
 vim.g.aurora_italic = 1
 vim.g.aurora_transparent = 1

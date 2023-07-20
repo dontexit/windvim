@@ -1,4 +1,6 @@
 local builtin = require('telescope.builtin')
+
+local extensions = require('telescope').extensions
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<C-g>', builtin.git_files, {})
 vim.keymap.set('n','<leader>bs',builtin.symbols,{})

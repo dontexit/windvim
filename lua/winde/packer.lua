@@ -12,12 +12,13 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
     use 'folke/tokyonight.nvim'
+    use {'nyoom-engineering/oxocarbon.nvim'}
     use { "catppuccin/nvim", as = "catppuccin" }
-    use ('nvim-treesitter/nvim-treesitter', {run= ':TSUpdate'})
-    use 'nvim-treesitter/nvim-treesitter'
+    use 'Mofiqul/dracula.nvim'
+    use ('nvim-treesitter/nvim-treesitter',
+        {run= ':TSUpdate'})
     use 'nvim-treesitter/playground'
     use 'hrsh7th/nvim-cmp'
-    use "ThePrimeagen/harpoon"
     use "mbbill/undotree"
     use "tpope/vim-fugitive"
     use {
@@ -58,11 +59,11 @@ use ({"ziontee113/color-picker.nvim",
         require("color-picker")
     end,
 })
+use 'nvim-tree/nvim-web-devicons'
 use 'mattn/emmet-vim'
 use 'dcampos/cmp-emmet-vim'
 use 'HiPhish/nvim-ts-rainbow2'
 use 'ray-x/aurora' 
-use 'nvim-tree/nvim-web-devicons'
 use {'nvim-tree/nvim-tree.lua',
     config=function()
         require('nvim-tree').setup(
@@ -82,7 +83,107 @@ use {'nvim-tree/nvim-tree.lua',
         end,
      
 }
+use {
+  'phaazon/hop.nvim',
+  branch = 'v2', -- optional but strongly recommended
+  config = function()
+    -- you can configure Hop the way you like here; see :h hop-config
+    require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+  end
+}
+use {"lukas-reineke/indent-blankline.nvim",
+    config = function ()
+        require("indent_blankline").setup {
+    space_char_blankline = " ",
+    show_current_context = true,
+    show_current_context_start = true,
+}
+    end
+}
 
+use {'brenoprata10/nvim-highlight-colors',
+    config=function()
+        require('nvim-highlight-colors').setup()
+    end,
+}
+use {
+  'nvim-lualine/lualine.nvim',
+  config=function()
+    require('lualine').setup {
+  options = {
+    icons_enabled = true,
+    disabled_filetypes = {
+      statusline = {},
+      winbar = {},
+    },
+    ignore_focus = {},
+    always_divide_middle = true,
+    globalstatus = false,
+    refresh = {
+      statusline = 1000,
+      tabline = 1000,
+      winbar = 1000,
+    }
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_c = {'filename'},
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {},
+  winbar = {},
+  inactive_winbar = {},
+  extensions = {}
+}
+end,
+  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+}
+use {
+  'kdheepak/tabline.nvim',
+  config = function()
+    require'tabline'.setup {
+      -- Defaults configuration options
+      enable = true,
+      options = {
+        section_separators = {'*', '*'},
+        component_separators = {'', ''},
+      -- If lualine is installed tabline will use separators configured in lualine by default.
+      -- These options can be used to override those settings.
+        max_bufferline_percent = 66, -- set to nil by default, and it uses vim.o.columns * 2/3
+        show_tabs_always = false, -- this shows tabs only when there are more than one tab or if the first tab is named
+        show_devicons = true, -- this shows devicons in buffer section
+        show_bufnr = false, -- this appends [bufnr] to buffer section,
+        show_filename_only = true, -- shows base filename only instead of relative path in filename
+        modified_icon = "+ ", -- change the default modified icon
+        modified_italic = false, -- set to true by default; this determines whether the filename turns italic if modified
+        show_tabs_only = false, -- this shows only tabs instead of tabs + buffers
+      }
+    }
+    vim.cmd[[
+      set guioptions-=e " Use showtabline in gui vim
+      set sessionoptions+=tabpages,globals " store tabpages and globals in session
+    ]]
+  end,
+  requires = { { 'hoob3rt/lualine.nvim', opt=true }, {'kyazdani42/nvim-web-devicons', opt = true} }
+}
+use {
+  'barrett-ruth/live-server.nvim',
+  run = 'yarn global add live-server',
+  config = function()
+    require('live-server').setup(opts)   
+  end
+}
 use {
 	"linux-cultist/venv-selector.nvim",
 	requires = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim" },
@@ -145,17 +246,4 @@ use {
 	end;
 	event = "VimEnter", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
 }
-use {'brenoprata10/nvim-highlight-colors',
-    config=function()
-        require('nvim-highlight-colors').setup()
-    end,
-}
-use {
-  'barrett-ruth/live-server.nvim',
-  run = 'yarn global add live-server',
-  config = function()
-    require('live-server').setup(opts)   
-  end
-}
-
 end)
