@@ -26,10 +26,4 @@ vim.opt.updatetime = 50
 
 vim.g.user_emmet_leader_key = '<C-;>'
 
-vim.o.t_Co = 256
-vim.g.aurora_italic = 1
-vim.g.aurora_transparent = 1
-vim.g.aurora_bold = 1
-vim.g.aurora_darker = 1
-vim.cmd('highlight Normal guibg=black')
 vim.api.nvim_set_var('python3_host_prog', 'C:/Python311')

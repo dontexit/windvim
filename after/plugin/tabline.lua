@@ -6,5 +6,5 @@ vim.keymap.set("n", "sa",":tabnext<CR>")
 vim.keymap.set("n", "sd",":tabprevious<CR>")
 
 vim.keymap.set("n", "fr",":TablineTabRename ")
-vim.keymap.set("n", "fw",":TablineTabNew ")
+vim.keymap.set("n", "fw",":TablineTabNew<CR>")
 
