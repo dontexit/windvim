@@ -16,6 +16,8 @@ vim.keymap.set("n","<leader>vc", "<cmd>:VenvSelectCached<cr>")
 		
 
 
+vim.keymap.set("n","fa",":bprev<cr>")
+vim.keymap.set("n","fa",":bnext<cr>")
 
 vim.keymap.set("n","fe",":NvimTreeToggle<cr>")
 vim.keymap.set("n","ff",":NvimTreeFocus<cr>")

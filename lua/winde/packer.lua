@@ -37,6 +37,8 @@ return require('packer').startup(function(use)
             { 'L3MON4D3/LuaSnip' }, -- Required
         }
     }
+    use 'nvim-lua/plenary.nvim'
+    use 'ThePrimeagen/harpoon'
     use {
         'numToStr/Comment.nvim',
         config = function()
@@ -56,6 +58,7 @@ return require('packer').startup(function(use)
             require("color-picker")
         end,
     })
+
     use 'nvim-tree/nvim-web-devicons'
     use 'mattn/emmet-vim'
     use 'dcampos/cmp-emmet-vim'
@@ -115,85 +118,7 @@ return require('packer').startup(function(use)
             require('nvim-highlight-colors').setup()
         end,
     }
-    use {
-        'nvim-lualine/lualine.nvim',
-        config = function()
-            require('lualine').setup {
-                options = {
-                    icons_enabled = true,
-                    disabled_filetypes = {
-                        statusline = {},
-                        winbar = {},
-                    },
-                    ignore_focus = {},
-                    always_divide_middle = true,
-                    globalstatus = false,
-                    refresh = {
-                        statusline = 1000,
-                        tabline = 1000,
-                        winbar = 1000,
-                    }
-                },
-                sections = {
-                    lualine_a = { 'mode' },
-                    lualine_b = { 'branch', 'diff', 'diagnostics' },
-                    lualine_c = { 'filename' },
-                    lualine_x = { 'encoding', 'fileformat', 'filetype' },
-                    lualine_y = { 'progress' },
-                    lualine_z = { 'location' }
-                },
-                inactive_sections = {
-                    lualine_a = {},
-                    lualine_b = {},
-                    lualine_c = { 'filename' },
-                    lualine_x = { 'location' },
-                    lualine_y = {},
-                    lualine_z = {}
-                },
-                tabline = {},
-                winbar = {},
-                inactive_winbar = {},
-                extensions = {}
-            }
-        end,
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    }
-    use {
-        'kdheepak/tabline.nvim',
-        config = function()
-            require 'tabline'.setup {
-                -- Defaults configuration options
-                enable = true,
-                options = {
-                    section_separators = { '*', '*' },
-                    component_separators = { '', '' },
-                    -- If lualine is installed tabline will use separators configured in lualine by default.
-                    -- These options can be used to override those settings.
-                    max_bufferline_percent = 66, -- set to nil by default, and it uses vim.o.columns * 2/3
-                    show_tabs_always = false, -- this shows tabs only when there are more than one tab or if the first tab is named
-                    show_devicons = true, -- this shows devicons in buffer section
-                    show_bufnr = false, -- this appends [bufnr] to buffer section,
-                    show_filename_only = true, -- shows base filename only instead of relative path in filename
-                    modified_icon = "+ ", -- change the default modified icon
-                    modified_italic = false, -- set to true by default; this determines whether the filename turns italic if modified
-                    show_tabs_only = false, -- this shows only tabs instead of tabs + buffers
-                }
-            }
-            vim.cmd [[
-      set guioptions-=e " Use showtabline in gui vim
-      set sessionoptions+=tabpages,globals " store tabpages and globals in session
-    ]]
-        end,
-        requires = { { 'hoob3rt/lualine.nvim', opt = true }, { 'kyazdani42/nvim-web-devicons', opt = true } }
-    }
-    use {
-        'barrett-ruth/live-server.nvim',
-        run = 'yarn global add live-server',
-        config = function()
-            require('live-server').setup(opts)
-        end
-    }
-    use 'rafi/awesome-vim-colorschemes'
+    
     use {
         "linux-cultist/venv-selector.nvim",
         requires = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim" },
@@ -256,4 +181,5 @@ return require('packer').startup(function(use)
         end,
         event = "VimEnter", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
     }
+   
 end)
