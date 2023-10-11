@@ -1,7 +1,17 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
+end
 
--- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+local packer_bootstrap = ensure_packer()
+
 
 return require('packer').startup(function(use)
     -- Packer can manage itself
@@ -45,13 +55,7 @@ return require('packer').startup(function(use)
             require('Comment').setup()
         end
     }
-    use {
-        's1n7ax/nvim-terminal',
-        config = function()
-            vim.o.hidden = true
-            require('nvim-terminal').setup()
-        end,
-    }
+   
     use({
         "ziontee113/color-picker.nvim",
         config = function()
@@ -90,6 +94,7 @@ return require('packer').startup(function(use)
         end,
 
     }
+
     use {
         'phaazon/hop.nvim',
         branch = 'v2', -- optional but strongly recommended
@@ -98,15 +103,7 @@ return require('packer').startup(function(use)
             require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
         end
     }
-    use { "lukas-reineke/indent-blankline.nvim",
-        config = function()
-            require("indent_blankline").setup {
-                space_char_blankline = " ",
-                show_current_context = true,
-                show_current_context_start = true,
-            }
-        end
-    }
+   use "lukas-reineke/indent-blankline.nvim" 
     use {
         'rmagatti/goto-preview',
         config = function()
