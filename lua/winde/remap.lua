@@ -7,10 +7,13 @@ vim.keymap.set("n", "Cp","<cmd>PickColor<cr>", opts)
 vim.keymap.set("n", "Ci", "<cmd>PickColorInsert<cr>", opts)
 vim.keymap.set("n","<leader>e",vim.cmd.Ex)
 
+
+vim.api.nvim_set_keymap('n', 'ws', ':res -1<CR>',opts)	
+vim.api.nvim_set_keymap('n', 'sw', ':res +1<CR>',opts)	
+
 vim.keymap.set("n","<leader>vs", "<cmd>:VenvSelect<cr>")
 
 vim.keymap.set("n","<leader>vc", "<cmd>:VenvSelectCached<cr>")
-		
 		
 -- terminal
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")

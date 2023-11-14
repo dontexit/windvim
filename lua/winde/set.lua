@@ -5,6 +5,8 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
+vim.api.nvim_command("terminal ++curwin ++columns=20")
+
 vim.opt.smartindent = true
 
 vim.opt.wrap = false
