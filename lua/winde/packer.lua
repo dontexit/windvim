@@ -28,6 +28,9 @@ return require('packer').startup(function(use)
     use 'hrsh7th/nvim-cmp'
     use "mbbill/undotree"
     use "tpope/vim-fugitive"
+    use {'github/copilot.vim' }
+
+
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
@@ -116,7 +119,23 @@ return require('packer').startup(function(use)
             require('nvim-highlight-colors').setup()
         end,
     }
-    
+    -- use {
+    -- "smoka7/multicursors.nvim",
+    -- event = "VeryLazy",
+    -- dependencies = {
+    --     'smoka7/hydra.nvim',
+    -- },
+    -- opts = {},
+    -- cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
+    -- keys = {
+    --         {
+    --             mode = { 'v', 'n' },
+    --             '<Leader>m',
+    --             '<cmd>MCstart<cr>',
+    --             desc = 'Create a selection for selected text or word under the cursor',
+    --         },
+    --     },
+-- }    
     use {
         "linux-cultist/venv-selector.nvim",
         requires = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim" },

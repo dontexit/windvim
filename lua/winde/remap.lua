@@ -20,7 +20,7 @@ vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 vim.keymap.set("n", "<leader>;",function() termopen() end)
 
 vim.keymap.set("n","fa",":bprev<cr>")
-vim.keymap.set("n","fa",":bnext<cr>")
+vim.keymap.set("n","fs",":bnext<cr>")
 
 vim.keymap.set("n","fe",":NvimTreeToggle<cr>")
 vim.keymap.set("n","ff",":NvimTreeFocus<cr>")
