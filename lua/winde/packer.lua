@@ -29,7 +29,7 @@ return require('packer').startup(function(use)
     use "mbbill/undotree"
     use "tpope/vim-fugitive"
     use {'github/copilot.vim' }
-
+use { "ellisonleao/gruvbox.nvim" }
 
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -198,5 +198,9 @@ return require('packer').startup(function(use)
         end,
         event = "VimEnter", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
     }
+
+use ({ 'projekt0n/github-nvim-theme' })
    
 end)
+
+

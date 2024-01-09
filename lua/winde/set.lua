@@ -27,6 +27,6 @@ vim.opt.updatetime = 50
 
 vim.g.user_emmet_leader_key = '<C-;>'
 
-vim.api.nvim_set_var('python3_host_prog', 'C:\\Users\\Edwin\\AppData\\Local\\Programs\\Python\\Python311\\python.exe')
+-- vim.api.nvim_set_var('python3_host_prog', 'C:\\Users\\Edwin\\AppData\\Local\\Programs\\Python\\Python311\\python.exe')
 
 
