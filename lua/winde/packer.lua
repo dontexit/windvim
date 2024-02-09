@@ -67,6 +67,9 @@ use { "ellisonleao/gruvbox.nvim" }
         end,
     })
 
+
+    use 'chr4/nginx.vim';
+
     use 'nvim-tree/nvim-web-devicons'
     use 'mattn/emmet-vim'
     use 'dcampos/cmp-emmet-vim'
@@ -202,5 +205,4 @@ use { "ellisonleao/gruvbox.nvim" }
 use ({ 'projekt0n/github-nvim-theme' })
    
 end)
-
 

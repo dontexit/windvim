@@ -24,8 +24,11 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
+vim.api.nvim_command('autocmd BufNewFile,BufRead *.conf set filetype=nginx')
+vim.api.nvim_command('autocmd BufNewFile,BufRead *DockerFile set filetype=docker')
+vim.api.nvim_command('autocmd BufNewFile,BufRead *docker-compose.yml set filetype=yaml.docker-compose')
+vim.api.nvim_command('autocmd BufNewFile,BufRead *docker-compose.yaml set filetype=yaml.docker-compose')
 
-vim.g.user_emmet_leader_key = '<C-;>'
 
 -- vim.api.nvim_set_var('python3_host_prog', 'C:\\Users\\Edwin\\AppData\\Local\\Programs\\Python\\Python311\\python.exe')
 
