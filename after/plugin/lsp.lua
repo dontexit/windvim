@@ -5,6 +5,7 @@ lsp.preset("recommended")
 lsp.ensure_installed({
   'tsserver',
   'rust_analyzer',
+  'lua_ls',
   'pyright',
   'eslint',
   'cssls',
@@ -15,7 +16,6 @@ lsp.ensure_installed({
 
 
 
-  
 -- Fix Undefined global 'vim'
 lsp.nvim_workspace()
 

@@ -1,13 +1,13 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
+    local fn = vim.fn
+    local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+    if fn.empty(fn.glob(install_path)) > 0 then
+        fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+        vim.cmd [[packadd packer.nvim]]
+        return true
+    end
+    return false
 end
 
 local packer_bootstrap = ensure_packer()
@@ -19,17 +19,17 @@ return require('packer').startup(function(use)
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.4',
         -- or                            , branch = '0.1.x',
-        requires = { {'nvim-lua/plenary.nvim'} }
-        }
-    
+        requires = { { 'nvim-lua/plenary.nvim' } }
+    }
+
     use('nvim-treesitter/nvim-treesitter',
         { run = ':TSUpdate' })
     use 'nvim-treesitter/playground'
     use 'hrsh7th/nvim-cmp'
     use "mbbill/undotree"
     use "tpope/vim-fugitive"
-    use {'github/copilot.vim' }
-use { "ellisonleao/gruvbox.nvim" }
+    use { 'github/copilot.vim' }
+    use { "ellisonleao/gruvbox.nvim" }
 
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -37,7 +37,7 @@ use { "ellisonleao/gruvbox.nvim" }
         requires = {
             -- LSP Support
             { 'neovim/nvim-lspconfig' }, -- Required
-            {                          -- Optional
+            {                            -- Optional
                 'williamboman/mason.nvim',
                 run = function()
                     pcall(vim.cmd, 'MasonUpdate')
@@ -46,9 +46,9 @@ use { "ellisonleao/gruvbox.nvim" }
             { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
             -- Autocompletion
-            { 'hrsh7th/nvim-cmp' }, -- Required
+            { 'hrsh7th/nvim-cmp' },     -- Required
             { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-            { 'L3MON4D3/LuaSnip' }, -- Required
+            { 'L3MON4D3/LuaSnip' },     -- Required
         }
     }
     use 'nvim-lua/plenary.nvim'
@@ -59,7 +59,7 @@ use { "ellisonleao/gruvbox.nvim" }
             require('Comment').setup()
         end
     }
-   
+
     use({
         "ziontee113/color-picker.nvim",
         config = function()
@@ -110,7 +110,7 @@ use { "ellisonleao/gruvbox.nvim" }
             require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
         end
     }
-   use "lukas-reineke/indent-blankline.nvim" 
+    use "lukas-reineke/indent-blankline.nvim"
     use {
         'rmagatti/goto-preview',
         config = function()
@@ -138,7 +138,7 @@ use { "ellisonleao/gruvbox.nvim" }
     --             desc = 'Create a selection for selected text or word under the cursor',
     --         },
     --     },
--- }    
+    -- }
     use {
         "linux-cultist/venv-selector.nvim",
         requires = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim" },
@@ -202,7 +202,5 @@ use { "ellisonleao/gruvbox.nvim" }
         event = "VimEnter", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
     }
 
-use ({ 'projekt0n/github-nvim-theme' })
-   
+    use({ 'projekt0n/github-nvim-theme' })
 end)
-
